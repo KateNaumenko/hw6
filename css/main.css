@@ -69,14 +69,6 @@
   max-width: 1170px;
   margin: auto;
   box-sizing: border-box;
- /* background: repeating-linear-gradient(
-    90deg,
-    #e1eeff,
-    #e1eeff 150px,
-    #fff 150px,
-    #fff 350px
-  );
-  opacity: .15;*/
 }
 
 .space,
@@ -96,6 +88,7 @@
 
 .large-logo-font{
   display: block;
+  margin-bottom: -5px;
 }
 
 .less-logo-font {
@@ -109,11 +102,15 @@
 }
 
 a:visited,
-a:hover,
 a:link,
 a:active {
   color: #4d4d4d;
   text-decoration: none;
+}
+
+.anchors:hover {
+  border-bottom: 2px solid #4d4d4d;
+  text-transform: capitalize;
 }
 
 /**/
@@ -147,16 +144,35 @@ a:active {
   color: #4d4d4d;
 }
 
+/*global*/
 .btn{
   background-color: transparent;
   border: 1px solid #4d4d4d;
   font: 16px/3 "Asap-Medium", "Helvetica", sans-serif;
   margin-top: 30px;
+  cursor: pointer;
+  color: #4d4d4d;
 }
+
+.btn:hover {
+  background-color: #fff;
+  box-shadow: 0 0 35px 10px #ccc;
+  border: 1px solid #fff;
+  transition: .5s ease;
+}
+/**/
 
 .home-btn {
   width: 160px;
   margin: 20px 10px;
+}
+
+.down-arrow {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  margin: 130px 0 0 10px;
 }
 
 /**/
@@ -171,6 +187,7 @@ a:active {
 }
 
 .headers {
+  position: relative;
   margin-bottom: 55px;
   opacity: .8;
   color: #4d4d4d;
@@ -178,8 +195,22 @@ a:active {
   letter-spacing: 5.5px;
 }
 
+.headers:before{
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    top: -20px;
+    right: 48%;
+    border-bottom: 4px solid #717171;
+}
+
 .header-about {
   margin-bottom: 0;
+}
+
+.header-about:before {
+  left: 0;
 }
 
 .about-text {
@@ -199,6 +230,14 @@ a:active {
   padding: 120px 0;
 }
 
+.service-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  white-space: pre-line;
+}
+
 .inl-block {
   display: inline-block;
 }
@@ -211,7 +250,6 @@ a:active {
   margin-top: 15px;
   color: #4d4d4d;
   font: 24px "Asap-Medium", "Helvetica", sans-serif;
-  white-space: pre-line;
 }
 
 /**/
@@ -225,7 +263,13 @@ a:active {
 }
 
 .diagram {
+  display: flex;
   margin-bottom: 15px;
+}
+
+.percents {
+  position: relative;
+  bottom: 24px;
 }
 
 .percent {
@@ -237,23 +281,23 @@ a:active {
 .ae-logo,
 .ps-logo,
 .ai-logo {
-  bottom: 5px;
+  bottom: -25px;
 }
 
 .xd-logo {
-  left: 20%;
+  left: 155px;
 }
 
 .ae-logo {
-  left: 39%;
+  left: 380px;
 }
 
 .ps-logo {
-  right: 39%;
+  left: 610px;
 }
 
 .ai-logo {
-  right: 22%;
+  left: 815px;
 }
 
 /**/
@@ -265,6 +309,32 @@ a:active {
 
 .img-portfolio {
   margin: 10px;
+  position: relative;
+}
+
+.img-portfolio:hover {
+  box-shadow: 0 0 35px 10px #ccc;
+  transition: .5s ease;
+}
+
+.img-portfolio:hover .tiny {
+  opacity: 1;
+  visibility: visible;
+  transition: .5s ease;
+}
+
+.tiny {
+  position: absolute;
+  display: block;
+  width: 55px;
+  height: 55px;
+  top: 140px;
+  left: 155px;
+  opacity: 0;
+  transition: .5s ease;
+  visibility: hidden;
+  background: #fff;
+  line-height: 3.5;
 }
 
 .first-in-row {
@@ -339,6 +409,11 @@ a:active {
   white-space: pre-line;
 }
 
+.funfast-img {
+    height: 100px;
+    object-fit: cover;
+}
+
 .funfast-bold-text {
   font: 30px "Asap-Medium", "Helvetica", sans-serif;
   color: #212121;
@@ -349,3 +424,144 @@ a:active {
   font: 22px/1.5 "Asap-Regular", "Helvetica", sans-serif;
   text-transform: uppercase;
 }
+
+/**/
+
+.contact {
+  margin-top: 155px;
+  padding: 170px 0 140px;
+  background-image: url("../img/contact_bg.png");
+  background-size: cover;
+  margin-bottom: -65px;
+}
+
+.contact-head {
+  color: #fff;
+}
+
+.contact-head:before {
+  border-color: #c1c1c1;
+}
+
+.list-input {
+  max-width: 770px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.fields::-webkit-input-placeholder {
+  font: 16px/4 "Asap-Regular", "Helvetica", sans-serif;
+  color: #212121;
+  opacity: 0.8;
+}
+
+.fields::-moz-placeholder {
+  font: 16px/4 "Asap-Regular", "Helvetica", sans-serif;
+  color: #212121;
+  opacity: 0.8;
+}
+
+.fields:-moz-placeholder  {
+  font: 16px/4 "Asap-Regular", "Helvetica", sans-serif;
+  color: #212121;
+  opacity: 0.8;
+}
+
+.fields:-ms-input-placeholder {
+  font: 16px/4 "Asap-Regular", "Helvetica", sans-serif;
+  color: #212121;
+  opacity: 0.8;
+}
+
+.fields {
+  padding: 20px 10px;
+  border: 1px solid #4d4d4d;
+}
+
+.name-field,
+.email-field {
+  width: 345px;
+  margin-bottom: 30px;
+}
+
+.message-field {
+  padding-top: 0;
+  resize: none;
+  width: 748px;
+}
+
+.arrow {
+  width: 100%;
+  height: 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.up-arrow {
+  position: relative;
+  right: -100px;
+  bottom: 50px;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.submit {
+  width: 100%;
+}
+
+.send {
+  padding: 0 50px 0 30px;
+  background: #fff url("../img/send-button.png") no-repeat center right;
+  background-position-x: 75px;
+  text-transform: uppercase;
+}
+
+/**/
+
+.footer{
+  position: relative;
+  display: flex;
+  border-top: 1px solid #fff;
+}
+
+.social-icons {
+  position: absolute;
+  width: 225px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%
+}
+
+.social-icon-wrap {
+  width: 27px;
+  height: 27px;
+  margin: auto;
+  background-color: #fff;
+  text-align: center;
+  line-height: 1.8;
+}
+
+.social-icon-wrap:hover {
+  background-color: #0084b4;
+}
+
+.social-icon-wrap:hover .fab { color: #fff; }
+
+.fab {
+  color: #4d4d4d;
+}
+
+.footer-text {
+  max-width: 300px;
+  display: flex;
+  margin: auto;
+  color: #fff;
+  font: 16px/4 "Montserrat-Regular", "Helvetica", sans-serif;
+}
+
